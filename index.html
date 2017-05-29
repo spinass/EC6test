@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>bandau js6</title>
+    </head>
+    <body>
+      <script>
+        const alus = {
+          pavadinimas: 'Belgiskas',
+          gamintojas: 'Carlsberg',
+          zymes: ['sviesus', 'lengvas', 'putojantis']
+        };
+
+        function renderZymes(zymes) {
+          return`
+          <ul>
+            ${zymes.map(zyme => `<li>${zyme}</li>`).join('')}
+          </ul>
+          `;
+        }
+        const reklama = `
+        <div class="alus">
+          <h2>${alus.pavadinimas}</h2>
+          <p class="gamykla">${alus.gamintojas}</p>
+          ${renderZymes(alus.zymes)}
+          </div>
+            `;
+    document.body.innerHTML = reklama;
+
+    </script>
+  </body>
+</html>
